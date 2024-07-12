@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../out-tsc/app",
+    "types": [],
+    "paths": {
+      "mfe1/*": [
+        "projects/mfe1/src/app/*"
+      ],
+      "mfe2/*": [
+        "projects/mfe2/src/app/*"
+      ]
+    },
+  },
+  "files": [
+    "src/main.ts",
+    "src/remotes.d.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
+  ]
+}

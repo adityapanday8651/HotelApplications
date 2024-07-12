@@ -1,0 +1,19 @@
+<!-- <app-header></app-header>
+<app-sidebar></app-sidebar> -->
+
+<app-header></app-header>
+
+<div class="shell-container">
+  <div class="sidebar" [ngClass]="{ 'sidebar-open': sidebarOpen, 'sidebar-closed': !sidebarOpen }">
+    <ul>
+      <li><a routerLink="/mfe1">MFE1</a></li>
+      <li><a routerLink="/mfe2">MFE2</a></li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <button class="btn btn-secondary toogleButton " (click)="toggleSidebar()">Toggle Sidebar</button>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+

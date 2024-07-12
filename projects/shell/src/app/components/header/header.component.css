@@ -1,0 +1,50 @@
+.header {
+    background-color: #007bff; /* Example background color */
+    color: #fff; /* Example text color */
+    padding: 10px 0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-brand {
+    font-size: 1.5rem; /* Example logo size */
+    font-weight: bold;
+  }
+  
+  .header-nav {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-nav li {
+    margin-right: 10px; /* Adjust as needed */
+  }
+  
+  .header-nav a {
+    color: #fff; /* Example link color */
+    text-decoration: none;
+    padding: 5px 10px;
+  }
+  
+  .header-buttons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn {
+    margin-left: 10px; /* Adjust for spacing */
+  }
+  
+  .btn-primary {
+    background-color: #28a745; /* Example primary button color */
+  }
+  
+  .btn-secondary {
+    background-color: #dc3545; /* Example secondary button color */
+  }
+  
