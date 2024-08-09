@@ -33,7 +33,6 @@ export class CategoryComponent {
 
   public async getAllCategoriesAsync() {
     await this.categoryService.getAllCategoriesAsync().subscribe(response => {
-      console.log("Response Data", response)
        this.lstAllCategories = response.data.categories;
        this.paginationData = response.data.categories;
     },
@@ -76,7 +75,6 @@ export class CategoryComponent {
   public async addCategoryAsync() {
     if (this.categoryForm.valid) {
       await this.categoryService.addCategoryAsync(this.categoryForm.value).subscribe(response => {
-        console.log("Response addCategoryAsync :", response);
       },
         error => {
           console.error('Error save categories:', error);

@@ -10,6 +10,11 @@ import { CategoryComponent } from './components/category/category.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 
+const routes:any = [
+  { path: 'home2', component: HomeComponent },
+  { path: 'category2', component: CategoryComponent },
+  { path: '', redirectTo: 'home2', pathMatch: 'full' }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,10 +24,7 @@ import { HeaderComponent } from './components/header/header.component';
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild([
-      // Define microfrontend routes here
-      { path: '', component: AppComponent }
-    ]),
+    RouterModule.forChild(routes),
     ReactiveFormsModule,
     HttpClientModule,
     ReactiveFormsModule,

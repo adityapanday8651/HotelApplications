@@ -2,6 +2,7 @@
     <div class="container mt-5">
       <div class="row align-items-center">
         <div class="col-12 col-md-8">
+          <h1>Category Table</h1>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -13,16 +14,16 @@
               <tr *ngFor="let category of lstAllCategories">
                 <td>{{category.name}}</td>
                 <td>
-                  <button type="button" class="btn fafaIconColor" data-bs-toggle="modal"
+                  <button type="button" class="btn btn-info fafaIconColor buttonMargin" data-bs-toggle="modal"
                     data-bs-target="#addCategotyModal" title="Save" (click)="open()">
-                    <i class="fa fa-plus"></i> Save
+                    <i class="fa fa-plus" aria-hidden="true"></i> 
                   </button>
-                  <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editCategotyModal"
+                  <button type="button" class="btn btn-warning buttonMargin" data-bs-toggle="modal" data-bs-target="#editCategotyModal"
                     title="Edit" (click)="editOpen(category.id)">
-                    <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+                    <i class="fa fa-pencil" aria-hidden="true"></i> 
                   </button>
-                  <button type="button" class="btn btn-danger" title="Delete" (click)="deleteCategoryAsync(category.id)">
-                    <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                  <button type="button" class="btn btn-danger buttonMargin" title="Delete" (click)="deleteCategoryAsync(category.id)">
+                    <i class="fa fa-trash" aria-hidden="true"></i> 
                   </button>
                 </td>
               </tr>
