@@ -1,25 +1,37 @@
-<!-- <div class="container">
-    <h4 class="text-align-center">
-        Welcome to Micro Frontends Projects
-    </h4>
-</div> -->
-
-<!--  -->
-
-
-<header class="header">
-    <div class="container">
-      <div class="header-brand">Your Logo</div>
-      <ul class="header-nav">
-        <li><a routerLink="/home">Home</a></li>
-        <li><a routerLink="/about">About</a></li>
-        <!-- Add more links as needed -->
-      </ul>
-      <div class="header-buttons">
-        <button class="btn btn-primary">Login</button>
-        <button class="btn btn-secondary">Logout</button>
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand">Aditya Collections</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/product" routerLinkActive="active">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/mfe2/category" routerLinkActive="active">Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/medicine" routerLinkActive="active">Medicine</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/profile" routerLinkActive="active">Profile</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <button class="btn btn-outline-light btn-logout">Logout</button>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-outline-light btn-login" routerLink="/login">Login</a>
+          </li>
+        </ul>
       </div>
     </div>
-  </header>
+  </nav>
   
   

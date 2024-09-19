@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-
-import { AppRoutingModule } from './app-routing.module';
+import {  HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
@@ -12,7 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 
 const routes:any = [
   { path: 'home2', component: HomeComponent },
-  { path: 'category2', component: CategoryComponent },
+  { path: 'category', component: CategoryComponent },
   { path: '', redirectTo: 'home2', pathMatch: 'full' }
 ];
 @NgModule({

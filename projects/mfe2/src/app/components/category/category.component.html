@@ -1,91 +1,92 @@
 <body>
-    <div class="container mt-5">
-      <div class="row align-items-center">
-        <div class="col-12 col-md-8">
-          <h1>Category Table</h1>
-          <table class="table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th scope="col">Category Name</th>
-                <th scope="col">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let category of lstAllCategories">
-                <td>{{category.name}}</td>
-                <td>
-                  <button type="button" class="btn btn-info fafaIconColor buttonMargin" data-bs-toggle="modal"
-                    data-bs-target="#addCategotyModal" title="Save" (click)="open()">
-                    <i class="fa fa-plus" aria-hidden="true"></i> 
-                  </button>
-                  <button type="button" class="btn btn-warning buttonMargin" data-bs-toggle="modal" data-bs-target="#editCategotyModal"
-                    title="Edit" (click)="editOpen(category.id)">
-                    <i class="fa fa-pencil" aria-hidden="true"></i> 
-                  </button>
-                  <button type="button" class="btn btn-danger buttonMargin" title="Delete" (click)="deleteCategoryAsync(category.id)">
-                    <i class="fa fa-trash" aria-hidden="true"></i> 
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </body>
-  <div class="modal fade" id="addCategotyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form [formGroup]="categoryForm">
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" formControlName="name"
-                [ngClass]="{'is-invalid': isNameInvalid()}">
-              <div *ngIf="isNameInvalid()" class="text-danger">
-                <div *ngIf="name.errors?.required">Name is required.</div>
-                <div *ngIf="name.errors?.minlength">Name must be at least 3 characters long.</div>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary" [disabled]="!categoryForm.valid"
-              (click)="addCategoryAsync()">Add</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
+  <div class="container mt-5">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-8">
+        <h1>Category Table</h1>
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Category Name</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let category of lstAllCategories">
+              <td>{{category.name}}</td>
+              <td>
+                <button type="button" class="btn btn-warning buttonMargin" data-bs-toggle="modal"
+                  data-bs-target="#editCategotyModal" title="Edit" (click)="editOpen(category.id)">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="btn btn-danger buttonMargin" title="Delete"
+                  (click)="deleteCategoryAsync(category.id)">
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button type="button" class="btn btn-info fafaIconColor buttonMargin" data-bs-toggle="modal"
+          data-bs-target="#addCategotyModal" title="Save" (click)="open()">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
       </div>
     </div>
   </div>
-  <div class="modal fade" id="editCategotyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Edit Category</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form [formGroup]="categoryForm">
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" formControlName="name"
-                [ngClass]="{'is-invalid': isNameInvalid()}">
-              <div *ngIf="isNameInvalid()" class="text-danger">
-                <div *ngIf="name.errors?.required">Name is required.</div>
-                <div *ngIf="name.errors?.minlength">Name must be at least 3 characters long.</div>
-              </div>
+</body>
+<div class="modal fade" id="addCategotyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="categoryForm">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" formControlName="name"
+              [ngClass]="{'is-invalid': isNameInvalid()}">
+            <div *ngIf="isNameInvalid()" class="text-danger">
+              <div *ngIf="name.errors?.required">Name is required.</div>
+              <div *ngIf="name.errors?.minlength">Name must be at least 3 characters long.</div>
             </div>
-            <button type="button" class="btn btn-primary" [disabled]="!categoryForm.valid"
-              (click)="updateCategoryAsync()">Edit</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="!categoryForm.valid"
+            (click)="addCategoryAsync()">Add</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
+</div>
+<div class="modal fade" id="editCategotyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Category</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="categoryForm">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" formControlName="name"
+              [ngClass]="{'is-invalid': isNameInvalid()}">
+            <div *ngIf="isNameInvalid()" class="text-danger">
+              <div *ngIf="name.errors?.required">Name is required.</div>
+              <div *ngIf="name.errors?.minlength">Name must be at least 3 characters long.</div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" [disabled]="!categoryForm.valid"
+            (click)="updateCategoryAsync()">Edit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

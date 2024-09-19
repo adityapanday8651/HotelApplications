@@ -74,6 +74,7 @@ export class CategoryComponent {
 
   public async addCategoryAsync() {
     if (this.categoryForm.valid) {
+      console.log("Category Name :", this.categoryForm.value)
       await this.categoryService.addCategoryAsync(this.categoryForm.value).subscribe(response => {
       },
         error => {
